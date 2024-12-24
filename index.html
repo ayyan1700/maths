@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .container {
+            text-align: center;
+        }
+        input[type="number"] {
+            padding: 8px;
+            width: 150px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+        
+
+
+    <h2>City Welcome Program</h2>
+    <p>Please enter your city:</p>
+    <input type="text" id="cityInput" placeholder="Enter city name">
+    <button onclick="welcomeCity()">Welcome</button>
+
+
+
+    <h2>Gender-Based Greeting Program</h2>
+    <p>Please enter your gender (male/female):</p>
+    <input type="text" id="genderInput" placeholder="Enter gender (male/female)">
+    <button onclick="greetUser()">Greet Me</button>
+
+
+
+
+    <h2>Traffic Signal Message</h2>
+    <p>Please enter the color of the traffic signal (Red, Yellow, Green):</p>
+    <input type="text" id="colorInput" placeholder="Enter color (Red, Yellow, Green)">
+    <button onclick="showTrafficSignalMessage()">Check Message</button>
+
+
+
+    <h2>Fuel Check Program</h2>
+    <p>Please enter the remaining fuel in your car (in litres):</p> 
+    <input type="number" id="fuelInput" placeholder="Enter fuel in litres" step="0.01">
+    <button onclick="checkFuel()">Check Fuel</button>
+
+
+
+
+
+
+
+
+        <h2>Student Marks and Grade Calculation</h2>
+        <div class="form-container">
+        <label for="subject1">Marks in Subject 1:</label>
+        <input type="number" id="subject1" placeholder="Enter marks" required><br>
+        <label for="subject2">Marks in Subject 2:</label>
+        <input type="number" id="subject2" placeholder="Enter marks" required><br>
+        <label for="subject3">Marks in Subject 3:</label>
+        <input type="number" id="subject3" placeholder="Enter marks" required><br>
+        <label for="totalMarks">Total Marks:</label>
+        <input type="number" id="totalMarks" value="300" readonly><br>
+        <button onclick="calculateGrade()">Calculate Grade</button>
+        <table id="resultTabl" style="display:none;">
+            <tr>
+                <th>Total Marks</th>
+                <th>Marks Obtained</th>
+                <th>Percentage</th>
+                <th>Grade</th>
+                <th>Remarks</th>
+            </tr>
+            <tr>
+                <td id="totalMarksResult"></td>
+                <td id="marksObtainedResult"></td>
+                <td id="percentageResult"></td>
+                <td id="gradeResult"></td>
+                <td id="remarksResult"></td>
+            </tr>
+        </table>
+    
+
+
+
+        <div class="container">
+            <h2>Guess the Secret Number (between 1 and 10)</h2>
+            <input type="number" id="userGuess" min="1" max="10" placeholder="Enter your guess">
+            <button onclick="checkGuess()">Submit Guess</button>
+    
+            <p id="message"></p>
+        </div>
+
+
+
+
+
+        <div class="container">
+            <h2>Check if a Number is Divisible by 3</h2>
+            <input type="number" id="number" placeholder="Enter a number" required>
+            <button onclick="checkDivisibility()">Check</button>
+            <p id="message"></p>
+        </div>
+
+
+
+        <div class="container">
+            <h2>Check if a Number is Even or Odd</h2>
+            <input type="number" id="number" placeholder="Enter a number" required>
+            <button onclick="checkEvenOdd()">Check</button>
+            <p id="messag"></p>
+        </div>
+
+
+
+
+        <div class="container">
+            <h2>Check the Weather Based on Temperature</h2>
+            <input type="number" id="temperature" placeholder="Enter Temperature" required>
+            <button onclick="checkWeather()">Check Weather</button>
+            <p id="messa"></p>
+        </div>
+
+
+
+
+        <div class="container">
+            <h2>Simple Calculator</h2>
+            <input type="number" id="firstNumber" placeholder="First Number" required><br>
+            <input type="number" id="secondNumber" placeholder="Second Number" required><br>
+            <input type="text" id="operation" placeholder="Operation (+, -, *, /, %)" required><br><br>
+            <button onclick="calculate()">Calculate</button>
+            <p id="resut"></p>
+        </div>
+
+
+
+    <script>
+      function welcomeCity() {
+            let city = document.getElementById('cityInput').value;
+            if (city.toLowerCase() === "karachi") {
+                alert("Welcome to the city of lights!");
+            } else {
+                alert("Welcome to " + city + "!");
+            }
+        }
+
+
+
+
+        function greetUser(){
+            let gender = document.getElementById('genderInput').value.toLowerCase();
+            if (gender === "male"){
+                alert("Good Morning Sir");
+            }else if (gender === "female"){
+                alert("Good Morning Ma'am");
+            }else{
+                alert("Please enter a valid gender (male or female).");
+            }
+        }
+
+          
+        function showTrafficSignalMessage() {
+            let color = document.getElementById('colorInput').value.toLowerCase();
+            if (color === "red") {
+                alert("Stop");
+            } else if (color === "yellow") {
+                alert("Ready");
+            } else if (color === "green") {
+                alert("Go");
+            } else {
+                alert("Invalid color");
+            }
+        }
+
+
+
+
+
+
+
+        function checkFuel() {
+            let fuel = parseFloat(document.getElementById('fuelInput').value);
+            if (fuel < 0.25) {
+                alert("Please refill the fuel in your car");
+            } else {
+                alert("You have enough fuel");
+            }
+        }
+
+
+
+
+
+
+
+
+        var a = 4;
+        if (++a === 5){ 
+       alert("given condition for variable a is true"); 
+       }
+       var b = 82;
+       if (b++ === 83){ 
+        alert("given condition for variable b is true"); 
+        }
+        var c = 12;
+        if (c++ === 13){ 
+        alert("condition 1 is true");   
+        } 
+        if (c === 13){ 
+      alert("condition 2 is true"); 
+         } 
+      if (++c < 14){ 
+      alert("condition 3 is true"); 
+     } 
+      if(c === 14){ 
+     alert("condition 4 is true"); 
+      }
+      var materialCost = 20000;
+var laborCost = 2000;
+var totalCost = materialCost + laborCost; 
+if (totalCost === laborCost + materialCost){ 
+    alert("The cost equals"); 
+}
+if (true){ 
+    alert("True"); 
+}
+if (false){ 
+    alert("False"); 
+}
+if("car" < "cat"){ 
+    alert("car is smaller than cat"); 
+}
+
+
+
+
+           function calculateGrade() {
+            var subject1 = parseFloat(document.getElementById("subject1").value);
+            var subject2 = parseFloat(document.getElementById("subject2").value);
+            var subject3 = parseFloat(document.getElementById("subject3").value);
+            var totalMarks = 300;  
+            var marksObtained = subject1 + subject2 + subject3;
+            var percentage = (marksObtained / totalMarks) * 100;
+            var grade, remarks;
+            if (percentage >= 90) {
+                grade = "A+";
+                remarks = "Excellent";
+            } else if (percentage >= 80) {
+                grade = "A";
+                remarks = "Very Good";
+            } else if (percentage >= 70) {
+                grade = "B";
+                remarks = "Good";
+            } else if (percentage >= 60) {
+                grade = "C";
+                remarks = "Average";
+            } else if (percentage >= 50) {
+                grade = "D";
+                remarks = "Needs Improvement";
+            } else {
+                grade = "F";
+                remarks = "Fail";
+            }
+            document.getElementById("totalMarksResult").innerText = totalMarks;
+            document.getElementById("marksObtainedResult").innerText = marksObtained;
+            document.getElementById("percentageResult").innerText = percentage.toFixed(2) + "%";
+            document.getElementById("gradeResult").innerText = grade;
+            document.getElementById("remarksResult").innerText = remarks;
+            document.getElementById("resultTabl").style.display = "block";
+        }
+
+
+
+  
+
+        const secretNumber = 7;
+
+function checkGuess() {
+    const userGuess = parseInt(document.getElementById("userGuess").value);
+    const messageElement = document.getElementById("message");
+    if (userGuess < 1 || userGuess > 10 || isNaN(userGuess)) {
+        messageElement.innerHTML = "Please enter a number between 1 and 10.";
+        return;
+    }
+
+
+
+    if (userGuess === secretNumber) {
+        messageElement.innerHTML = "Bingo! Correct answer";
+    } else if (userGuess + 1 === secretNumber) {
+        messageElement.innerHTML = "Close enough to the correct answer";
+    } else {
+        messageElement.innerHTML = "Try again!";
+    }
+}
+
+           
+
+           function checkDivisibility() {
+            const num = parseInt(document.getElementById("number").value);
+            const messageElement = document.getElementById("message");
+            if (num % 3 === 0) {
+                messageElement.innerHTML = "The number is divisible by 3!";
+            } else {
+                messageElement.innerHTML = "The number is not divisible by 3.";
+            }
+        }
+
+
+
+
+
+
+        function checkEvenOdd() {
+            const num = parseInt(document.getElementById("number").value);
+            const messageElement = document.getElementById("messag");
+            if (num % 2 === 0) {
+                messageElement.innerHTML = "The number is even.";
+            } else {
+                messageElement.innerHTML = "The number is odd.";
+            }
+        }
+         
+
+
+
+
+
+        function checkWeather() { 
+            const temp = parseInt(document.getElementById("temperature").value);
+            const messageElement = document.getElementById("messa");
+            if (temp > 40) {
+                messageElement.innerHTML = "It is too hot outside.";
+            } else if (temp > 30) {
+                messageElement.innerHTML = "The Weather today is Normal.";
+            } else if (temp > 20) {
+                messageElement.innerHTML = "Today’s Weather is cool.";
+            } else if (temp > 10) {
+                messageElement.innerHTML = "OMG! Today’s weather is so Cool.";
+            } else {
+                messageElement.innerHTML = "It’s freezing outside!";
+            }
+        }
+
+
+
+
+
+        function calculate() {
+            // Get user input values
+            const num1 = parseFloat(document.getElementById("firstNumber").value);
+            const num2 = parseFloat(document.getElementById("secondNumber").value);
+            const operation = document.getElementById("operation").value;
+            const resultElement = document.getElementById("resut");
+
+            // Check if the numbers and operation are valid
+            if (isNaN(num1) || isNaN(num2)) {
+                resultElement.innerHTML = "Please enter valid numbers.";
+                return;
+            }
+            let result;
+            if (operation === "+") {
+                result = num1 + num2;
+            } else if (operation === "-") {
+                result = num1 - num2;
+            } else if (operation === "*") {
+                result = num1 * num2;
+            } else if (operation === "/") {
+                if (num2 === 0) {
+                    resultElement.innerHTML = "Error! Division by zero is not allowed.";
+                    return;
+                }
+                result = num1 / num2;
+            } else if (operation === "%") {
+                result = num1 % num2;
+            } else {
+                resultElement.innerHTML = "Invalid operation. Please enter one of the following: +, -, *, /, %";
+                return;
+            }
+            resultElement.innerHTML = `Result: ${result}`;
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
